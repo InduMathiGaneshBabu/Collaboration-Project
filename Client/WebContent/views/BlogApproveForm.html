@@ -1,0 +1,21 @@
+<div ng-show="user!=undefined">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<b>Blog Title:</b>{{blogpost.blogposttitle}}<br>
+<b>Posted On:</b>{{blogpost.postedOn | date:'dd-MMM-yyyy : hh:mm:ss'}}<br>
+<b>Author :</b>{{blogpost.author.email}}<br>
+</div>
+<div class="panel-body">
+<p ng-bind-html="content"><br></p>
+Likes{{blogpost.likes}}<a><span class="glyphicon glyphicon-thumbs-up"></span></a><br>
+comments<br>
+<button class="btn btn-success" ng-click="approve(blogpost)">Approve</button>&nbsp;&nbsp;
+<button class="btn btn-danger" ng-click="Reject()" ng-hide="isRejected">Reject</button>
+<div ng-show="isRejected">
+<textarea rows="3" cols="50" ng-model="rejectionreason">Reason For Reason</textarea>
+<button class="btn btn-success" ng-click="reject(blogpost,rejectionreason)">Reject</button>
+</div>
+
+</div>
+</div>
+</div>

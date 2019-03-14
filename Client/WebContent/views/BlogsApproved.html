@@ -1,0 +1,21 @@
+<div ng-show="user==undefined"><b>Please login</b><a href="#/login">Login Here</a></div>
+<div ng-show="user!=undefined">
+<br><div class="panel panel-success">
+<div class="panel-heading">
+<b>Approved Blogs </b>
+</div>
+<div class="panel-body">
+<form>
+<ul style="list-style:none">
+<li ng-repeat="blogpost in blogsapproved">
+<a href="#/getblogapproved/{{blogpost.blogpostid}}"><b>Blog Title: </b><b>{{blogpost.blogposttitle}}</b></a><br>
+<a>Blog Content:{{blogpost.blogpostcontent}}</a><br>
+<a>Posted On: {{blogpost.postedOn | date:'dd-MMM-yyyy hh:mm:ss'}}</a><br>
+<a>Author's Email: {{blogpost.author.email}}</a><br>
+<a>Posted By: {{blogpost.author.firstname}}{{blogpost.author.lastname}}</a><br><br>
+</li>
+</ul>
+</form>
+</div>
+</div>
+</div>

@@ -1,0 +1,27 @@
+<div ng-show="user==undefined"><b>Please Login <a href="#/login"></a></b></div>
+<div ng-show="user!=undefined">
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3>Job Details</h3>
+</div>
+<div class="panel-body">
+<ul style="list-style-type:none">
+<li ng-repeat="job in jobs">
+<a><b> Job Title :</b> {{job.jobtitle}}</a><br>
+<b>Skills Required :</b>{{job.skillsrequired}}<br>
+<b>Posted On :</b>{{job.postedOn | date:'dd-MMM-yyyy hh:mm:ss'}}<br>
+<a ng-click="showcontent(job.jobid)" ng-hide="show && job.jobid==jobid">Show Content</a>
+<div  ng-show="show && job.jobid==jobid" >
+<b>Job Description:</b>{{job.jobdescription}}<br>
+<b>Salary:</b>{{job.salary}}<br>
+<b>Location:</b>{{job.location}}<br>
+<b>Years Of Experience:</b>{{job.yearsofexperience}}<br>
+<a ng-click="showcontent(job.jobid)">Hide Content</a>
+</div>
+
+
+</li>
+</ul>
+</div>
+</div>
+</div>

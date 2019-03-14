@@ -1,0 +1,28 @@
+<div ng-show="user==undefined" style="color:red"><b>Please login</b><a href="#/login">Login Here</a></div>
+<div ng-show="user.role!='ADMIN'" style="color:red"><b>you are unauthorized to view this page!!!</b></div>
+<div ng-show="user.role=='ADMIN'">
+<div ng-show="user!=undefined">
+
+<br><div class="panel panel-info">
+<div class="panel-heading">
+<b>BlogPost Waiting For Approval </b>
+</div>
+<div class="panel-body">
+<div ng-show="blogpostwaiting.length==0" style="color:red"> No Blogs Waiting for Approval</div>
+<form>
+<ul style="list-style:none">
+<li ng-repeat="blogpost in blogpostwaiting">
+<a href="#/getblog/{{blogpost.blogpostid}}"><b>Blog Title: </b><b>{{blogpost.blogposttitle}}</b></a><br>
+<a>Blog Content:{{blogpost.blogpostcontent}}</a><br>
+<a>Posted On: {{blogpost.postedOn | date:'dd-MMM-yyyy hh:mm:ss'}}</a><br>
+<a>Author's Email: {{blogpost.author.email}}</a><br>
+<a>Posted By: {{blogpost.author.firstname}}{{blogpost.author.lastname}}</a><br><br>
+</li>
+</ul>
+
+</form>
+</div>
+
+</div>
+</div>
+</div>

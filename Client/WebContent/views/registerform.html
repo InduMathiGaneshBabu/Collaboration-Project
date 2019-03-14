@@ -1,0 +1,15 @@
+
+<span style="color:red">{{error}}</span>
+<form>
+<b>Email:</b><input type="email" ng-model="user.email">
+<b>PassWord:</b><input type="password"ng-model="user.password">
+<b>FirstName:</b><input type="text" ng-model="user.firstname">
+<b>LastName:</b><input type="text" ng-model="user.lastname">
+<b>PhoneNumber:</b><input type="text" ng-model="user.phonenumber">
+<b>Role:</b><select ng-model="user.role"><option value="ADMIN">Admin</option>
+<option value="STUDENT">Student</option>
+<option value="EMPLOYEE">Employee</option>
+</select>
+<button ng-click="register(user)">Register</button>
+
+</form>

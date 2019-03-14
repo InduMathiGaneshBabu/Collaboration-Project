@@ -1,0 +1,10 @@
+<div ng-show="user==undefined"><b>Please login first<a href="#/login">Click here to login</a></b></div>
+<div ng-show="user!=undefined">
+<span style="color:red">{{error.errorMessage}}</span>
+<span style="color:blue">{{message}}</span>
+<form>
+<b>Enter BlogTitle:</b><input type="text" ng-model="blogpost.blogposttitle">
+<b>Enter BlogContent:</b><textarea rows="4" cols="50" ng-model="blogpost.blogpostcontent"></textarea>
+<button ng-click="addblogpost(blogpost)" class="btn btn-primary">Add Blog</button>
+</form>
+</div>

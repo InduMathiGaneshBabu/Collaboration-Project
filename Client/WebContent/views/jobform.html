@@ -1,0 +1,21 @@
+<div ng-show="user.role!='ADMIN'">
+<b>You are not Authorized to view this page Only Admin can view this page
+<a href="#/login">please login with different Admin account for view this page </a>
+</b>
+</div>
+<div ng-show="user.role=='ADMIN'">
+<span style="color:red">{{error.errorMessage}}</span>
+<span style="color:red">{{message}}</span>
+<form>
+<pre>
+Enter jobtitle:<input type="text" ng-model="job.jobtitle">
+Enter Jobdescription:<textarea ng-model="job.jobdescription"></textarea>
+Enter Salary:<input type="text" ng-model="job.salary">
+Enter skills:<input type="text" ng-model="job.skillsrequired">
+Enter location:<input type="text" ng-model="job.location">
+<button ng-click="addJob()">AddJob</button>
+</pre>
+</form>
+</div>
+
+
